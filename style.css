@@ -115,6 +115,7 @@ body {
 .package-price-container {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .package-price-container h4 {
