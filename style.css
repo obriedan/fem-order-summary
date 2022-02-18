@@ -16,6 +16,22 @@
 
   --background-main-color: #e0e8ff;
   --background-wave-color: #d6e1ff;
+
+  --padding-card-content-container: 48px;
+
+  --margin-top-title: 45px;
+  --margin-top-text: 17px;
+  --margin-top-plan: 20px;
+  --margin-top-button: 32px;
+  --margin-top-cancel: 32px;
+
+  --font-size-title: 28px;
+  --font-size-text: 16px;
+  --font-size-plan: 16px;
+  --font-size-price: 16px;
+  --font-size-change: 14px;
+  --font-size-button: 15px;
+  --font-size-cancel: 15px;
 }
 
 body {
@@ -28,17 +44,21 @@ body {
 
 .background-wave {
   position: absolute;
+  right: 50%;
+  transform: translateX(50%);
   z-index: -1;
 }
 
 .container {
   height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .card {
+  margin: 0 24px;
   max-width: 450px;
   border-radius: 20px;
   background: #fff;
@@ -48,33 +68,37 @@ body {
 }
 
 .card-content-container {
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-bottom: 48px;
+  padding-left: var(--padding-card-content-container);
+  padding-right: var(--padding-card-content-container);
+  padding-bottom: var(--padding-card-content-container);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-title {
+  margin-top: var(--margin-top-title);
   font-style: normal;
   font-weight: 900;
-  font-size: 28px;
+  font-size: var(--font-size-title);
   line-height: 37px;
   text-align: center;
-  margin-top: 45px;
   color: var(--text-dark-color);
 }
 
 .card-text {
+  margin-top: var(--margin-top-text);
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-size-text);
   line-height: 26px;
   text-align: center;
-  margin-top: 17px;
   color: var(--text-light-color);
 }
 
 .package-container {
-  margin-top: 20px;
+  width: 100%;
+  margin-top: var(--margin-top-plan);
   padding: 25px 24px;
   border-radius: 11px;
   background-color: var(--box-color);
@@ -93,19 +117,87 @@ body {
   flex-direction: column;
 }
 
+.package-price-container h4 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: var(--font-size-price);
+  line-height: 21px;
+  color: var(--text-dark-color);
+}
+.package-price-container p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: var(--font-size-price);
+  line-height: 21px;
+  color: var(--text-light-color);
+}
+
 .change-package {
   font-weight: bold;
-  font-size: 14px;
+  font-size: var(--font-size-change);
   line-height: 19px;
   text-decoration-line: underline;
   color: var(--button-link-main-color);
   margin-left: auto;
 }
 
+.change-package:hover {
+  color: var(--button-link-light-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .payment-button {
   width: 100%;
+  margin-top: var(--margin-top-button);
+  padding: 15px 0;
+  font-style: normal;
+  font-weight: 900;
+  font-size: var(--font-size-button);
+  line-height: 20px;
   color: white;
   background-color: var(--button-link-main-color);
   box-shadow: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+  border: none;
   border-radius: 11px;
+}
+
+.payment-button:hover {
+  background-color: var(--button-link-light-color);
+  cursor: pointer;
+}
+
+.cancel-order {
+  margin-top: var(--margin-top-cancel);
+  font-style: normal;
+  font-weight: 900;
+  font-size: var(--font-size-cancel);
+  line-height: 20px;
+  text-decoration: none;
+  color: var(--text-light-color);
+}
+
+.cancel-order:hover {
+  color: var(--text-dark-color);
+  cursor: pointer;
+}
+
+@media (max-width: 375px) {
+  :root {
+    --padding-card-content-container: 24px;
+
+    --margin-top-title: 32px;
+    --margin-top-text: 16px;
+    --margin-top-plan: 24px;
+    --margin-top-button: 24px;
+    --margin-top-cancel: 24px;
+
+    --font-size-title: 22px;
+    --font-size-text: 15px;
+    --font-size-plan: 14px;
+    --font-size-price: 14px;
+    --font-size-change: 13px;
+    --font-size-button: 15px;
+    --font-size-cancel: 15px;
+  }
 }
